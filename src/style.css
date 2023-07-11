@@ -1,0 +1,110 @@
+body{
+
+  background: #292d34 !important;
+  overflow: hidden;
+
+}
+
+#fadeCover {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #292d34;
+}
+
+.navbar{
+
+    padding:0.5rem;
+
+}
+
+.card {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.btn-primary{
+
+    width:100%;
+
+}
+
+
+.hcenter{
+
+    text-align: center;
+    justify-content: center;
+
+}
+
+.centered {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#homecontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Adjust the height as needed */
+}
+
+#businesscontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Adjust the height as needed */
+}
+
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.Toastify__toast--warning {
+  background: transparent;
+  box-sizing: border-box;
+  box-shadow: none !important;
+}
+
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.25rem !important;
+  text-align: center;
+}
+
+
+.cantAfford{
+
+    color:red;
+
+}
+
+.canAfford{
+
+    color:green;
+
+}
+
+.gymBought{
+
+    color: lightblue;
+
+}
