@@ -1,12 +1,24 @@
 import React from 'react';
 import { player, skill, gym } from './data.js';
+import { loadGame, saveGame } from './LocalStorage.js';
 import { ToastContainer, toast } from 'react-toastify';
 import $ from 'jquery';
 
 
+$(document).ready(function(){
+
+  /*! Fades in page on load */
+  $('body').css('display', 'none');
+  $('body').fadeIn(1000);
+
+  //loadgame function was here but is broken pls fix
+
+});
+
 
 export function updateSkillUI(){
 
+  const pushUpCurrentRepDisplay = document.getElementById("pushUpCurrentRep");
   const pushUpLevelDisplay = document.getElementById("pushupLevel");
   const pushUpCurrentXPDisplay = document.getElementById("pushupCurrentXP");
   const pushUpRequiredXPDisplay = document.getElementById("pushupRequiredXP");
@@ -15,6 +27,7 @@ export function updateSkillUI(){
 	pushUpLevelDisplay.innerHTML = skill.pushUp.level;
 	pushUpCurrentXPDisplay.innerHTML = skill.pushUp.currentXP;
 	pushUpRequiredXPDisplay.innerHTML = skill.pushUp.requiredXP;
+  pushUpCurrentRepDisplay.innerHTML = skill.pushUp.currentRep;
 
 }
 
@@ -32,6 +45,8 @@ export function checkForLevelUp(skill) {
 var isRep = false;
 
 export function repPushup() {
+  
+
   if (isRep) {
     return; // Exit the function if a timeout is already running
   }
@@ -49,7 +64,8 @@ export function repPushup() {
     progressBar.setAttribute('aria-valuenow', '0');
 
     skill.pushUp.currentXP += skill.pushUp.xPReward;
-    player.cash += 10000; 
+    skill.pushUp.currentRep += 1;
+    
     toast.warning('💪 +' + skill.pushUp.strReward, {
 
     });
@@ -57,7 +73,14 @@ export function repPushup() {
     checkForLevelUp(skill.pushUp);
     updateSkillUI();
 
-    isRep = false;
+    if (skill.pushUp.currentRep < skill.pushUp.maxRep) {
+        isRep = false;
+        repPushup();
+      } else {
+        skill.pushUp.currentRep = 0;
+        isRep = false;
+        updateSkillUI();
+      }
   }, skill.pushUp.repSpeed * 1000);
 }
 

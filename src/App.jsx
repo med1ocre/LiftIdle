@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
+
   const [activeContent, setActiveContent] = useState('home');
 
   const handleClick = (content) => {

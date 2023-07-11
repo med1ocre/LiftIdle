@@ -20,7 +20,10 @@ export let skill = {
 		xPReward: 5,
 		currentXP: 0,
 		requiredXP: 50,
-		level: 0
+		level: 0,
+		
+		currentRep: 0,
+		maxRep: 5
 
 	}
 
