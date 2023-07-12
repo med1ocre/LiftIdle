@@ -1,8 +1,9 @@
 import React from 'react';
 import { player, skill, gym } from './data.js';
-import { loadGame, saveGame } from './LocalStorage.js';
+//import { loadGame, saveGame } from './LocalStorage.js';
 import { ToastContainer, toast } from 'react-toastify';
 import $ from 'jquery';
+import { loadGame } from './data.js'
 
 
 $(document).ready(function(){
@@ -12,11 +13,16 @@ $(document).ready(function(){
   $('body').fadeIn(1000);
 
   //loadgame function was here but is broken pls fix
-
+  loadGame();
 });
 
 
 export function updateSkillUI(){
+
+  const homeContentDisplay = document.getElementById("homecontent");
+  if (homeContentDisplay == null) {
+    return;
+  }
 
   const pushUpCurrentRepDisplay = document.getElementById("pushUpCurrentRep");
   const pushUpLevelDisplay = document.getElementById("pushupLevel");
@@ -46,27 +52,42 @@ var isRep = false;
 
 export function repPushup() {
   
+  const homeContentDisplay = document.getElementById("homecontent");
+
+  const pushUpProgressBar = document.querySelector('.pushUpProgress');
 
   if (isRep) {
     return; // Exit the function if a timeout is already running
   }
 
-  var progressBar = document.querySelector('.progress-bar');
-  progressBar.style.transition = `${skill.pushUp.repSpeed}s width linear`;
-  progressBar.style.width = '100%';
-  progressBar.setAttribute('aria-valuenow', '100');
+  if (homeContentDisplay !== null) {
+    
+    pushUpProgressBar.style.transition = `${skill.pushUp.repSpeed}s width linear`;
+    pushUpProgressBar.style.width = '100%';
+    pushUpProgressBar.setAttribute('aria-valuenow', '100');
+  }
 
   isRep = true;
 
   setTimeout(function () {
-    progressBar.style.transition = 'none';
-    progressBar.style.width = '0%';
-    progressBar.setAttribute('aria-valuenow', '0');
+
+
+    if (homeContentDisplay !== null) {
+      pushUpProgressBar.style.transition = 'none';
+      pushUpProgressBar.style.width = '0%';
+      pushUpProgressBar.setAttribute('aria-valuenow', '0');
+    }
+
+    console.log("TEST")
 
     skill.pushUp.currentXP += skill.pushUp.xPReward;
     skill.pushUp.currentRep += 1;
+    player.strength += skill.pushUp.strReward * player.strMulti;
+
+    console.log("Multi: " + player.strMulti);
+    console.log("Str: " + player.strength);
     
-    toast.warning('💪 +' + skill.pushUp.strReward, {
+    toast.warning('💪 +' + skill.pushUp.strReward * player.strMulti, {
 
     });
 
@@ -96,6 +117,9 @@ export function purchaseGym(gymid){
     if(player.cash < gym.one.price){
       return;
     }
+
+    player.strMulti += 0.10;
+
     gym.one.bought = true;
     canAffordGymDisplay.innerHTML = "Purchased"
     canAffordGymDisplay.className = "gymBought"

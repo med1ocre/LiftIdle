@@ -1,3 +1,5 @@
+import { updateSkillUI } from './script.js';
+
 export let player = {
 
 	cash: 0,
@@ -8,6 +10,8 @@ export let player = {
 
 	totalReps: 0,
 	muscleMass: 0,
+
+	strMulti: 1
 
 }
 
@@ -43,3 +47,37 @@ export let gym = {
 	}
 
 }
+
+
+export function saveGame(){
+
+	let gameSave = {
+
+		player: player,
+		skill: skill,
+		gym: gym
+
+	};
+	localStorage.setItem("gameSave", JSON.stringify(gameSave));
+	console.log("Game saved");
+}
+
+
+
+export function loadGame(){
+
+	let savedGame = JSON.parse(localStorage.getItem("gameSave"));
+	if(typeof savedGame.player !== "undefined") player = savedGame.player;
+	if(typeof savedGame.skill !== "undefined") skill = savedGame.skill;
+	if(typeof savedGame.gym !== "undefined") gym = savedGame.gym;
+
+	updateSkillUI();
+
+	console.log("Game loaded");
+}
+
+
+
+setInterval(function(){saveGame();},10000);
+
+

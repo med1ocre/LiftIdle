@@ -5,6 +5,12 @@ body{
 
 }
 
+.gameLogo{
+
+  margin-left:10px;
+
+}
+
 #fadeCover {
     width: 100vw;
     height: 100vh;

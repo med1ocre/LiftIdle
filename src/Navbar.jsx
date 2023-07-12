@@ -5,7 +5,7 @@ const Navbar = ({ handleClick, activeContent }) => {
   return (
     <nav className="navbar navbar-dark navbar-expand-md bg-dark">
       <div className="d-flex align-items-center">
-        <div className="flex-grow-1">
+        <div className="flex-grow-1 gameLogo">
           <a href="/" className="navbar-brand">liftidle | v0.0.1</a>
         </div>
       </div>
