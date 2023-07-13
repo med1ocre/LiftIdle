@@ -1,19 +1,24 @@
 import { updateSkillUI } from './script.js';
 
+import { Item } from './Item.js';
+
 export let player = {
 
 	cash: 0,
 
 	strength: 1,
-	endurance: 1,
+	intelligence: 1,
 	agility: 1,
 
 	totalReps: 0,
 	muscleMass: 0,
 
-	strMulti: 1
+	strMulti: 1,
+
+	inventory: [ Item.RustySword ]
 
 }
+
 
 export let skill = {
 

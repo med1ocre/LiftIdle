@@ -86,7 +86,7 @@ export function repPushup() {
 
     console.log("Multi: " + player.strMulti);
     console.log("Str: " + player.strength);
-    
+
     toast.warning('💪 +' + skill.pushUp.strReward * player.strMulti, {
 
     });

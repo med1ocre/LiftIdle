@@ -33,7 +33,22 @@ const Navbar = ({ handleClick, activeContent }) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#" style={{ display: 'none' }}>TBD</a>
+            <a
+              className={activeContent === 'arena' ? 'nav-link active' : 'nav-link'}
+              href="#"
+              onClick={() => handleClick('arena')}
+            >
+              Arena
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className={activeContent === 'inventory' ? 'nav-link active' : 'nav-link'}
+              href="#"
+              onClick={() => handleClick('inventory')}
+            >
+              Inventory
+            </a>
           </li>
         </ul>
         <div style={{ width: '8rem' }}>
