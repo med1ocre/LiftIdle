@@ -5,7 +5,7 @@ export const Item = {
   WoodenSword: {
     id: 1,
     name: 'Wooden Sword',
-    image: '/media/items/WoodenSword.png',
+    image: 'media/items/WoodenSword.png',
     price: 10,
     amount: 1,
     type: 'primary'
@@ -13,7 +13,7 @@ export const Item = {
   WoodenShield: {
     id: 2,
     name: 'Wooden Shield',
-    image: '/media/items/WoodenShield.png',
+    image: 'media/items/WoodenShield.png',
     price: 10,
     amount: 1,
     type: 'secondary'
@@ -22,7 +22,7 @@ export const Item = {
   BoxingGloves: {
     id: 3,
     name: 'Boxing Gloves',
-    image: '/media/items/BoxingGloves.png',
+    image: 'media/items/boxinggloves.png',
     price: 10,
     amount: 1001,
     type: 'primary'
