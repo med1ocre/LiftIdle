@@ -8,7 +8,7 @@ const BusinessContent = () => {
   return (
     <div id="businesscontent">
       <div className="justify-content-center">
-        <div className="card bg-dark text-light text-center prevent-select" style={{ width: '18rem' }}>
+        <div className="card cardhover bg-dark text-light text-center prevent-select" style={{ width: '18rem' }}>
           <div className="card-body" id="gymOneCard">
             <h5 className="card-title">Gym #1</h5>
               

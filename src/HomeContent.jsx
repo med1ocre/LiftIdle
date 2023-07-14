@@ -8,7 +8,7 @@ const HomeContent = () => {
   return (
     <div id="homecontent">
       <div className="justify-content-center">
-        <div className="card bg-dark text-light text-center prevent-select" style={{ width: '18rem' }}>
+        <div className="card cardhover bg-dark text-light text-center prevent-select" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Pushups</h5>
             <p className="card-text">Current Level: <span id="pushupLevel">{skill.pushUp.level}</span><br></br>Max Reps: <span id="pushUpCurrentRep">{skill.pushUp.currentRep}</span> / {skill.pushUp.maxRep}<br></br>Rep Speed: <span id="pushUpRepSpeed">{skill.pushUp.repSpeed}s</span></p>

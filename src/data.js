@@ -16,7 +16,23 @@ export let player = {
 
 	strMulti: 1,
 
-	inventory: [ Item.RustyShield, Item.RustySword, Item.BoxingGloves ]
+	inventory: [ Item.BoxingGloves, Item.WoodenSword, Item.WoodenShield ],
+
+	equipment: {
+
+		head: '',
+		chest: '',
+		legs: '',
+		feet: '',
+		hands: '',
+		primary: Item.BoxingGloves,
+		secondary: '',
+		neck: '',
+		ring: '',
+
+
+
+	}
 
 }
 
