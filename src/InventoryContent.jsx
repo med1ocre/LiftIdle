@@ -60,6 +60,7 @@ const InventoryContent = () => {
                 <div className="tabs-container">
                   {tabs.map((tab, index) => (
                     <div
+                      
                       key={tab.id}
                       className={`tab ${activeTab === index ? 'active' : ''}`}
                       onDoubleClick={() => handleTabDoubleClick(tab.id)}
@@ -103,11 +104,14 @@ const InventoryContent = () => {
                     trigger="mouseenter"
                     arrow={true}
                   >
-                    <img src={item.image} alt={item.name} style={{ width: '40px', height: '40px' }} />
+                    <div>
+                      <img src={item.image} alt={item.name} style={{ width: '40px', height: '40px' }} />
+                      <div className="item-amount">{item.amount}</div> {/* Added line */}
+                    </div>
                   </Tooltip>
                 </div>
-
               ))}
+
             </div>
           </div>
         </div>

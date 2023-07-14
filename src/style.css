@@ -19,7 +19,22 @@ h1, h2, h3, h4, h5, h6{
 
 .inventory-wrapper {
   padding: 10px;
+
 }
+
+.item-amount {
+  font-weight: 600 !important;
+  font-size: 11px;
+  background-color: #464b52;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 2px;
+  padding: 1px 10px;
+  display: inline-block; /* Add this line */
+  max-width: 100%; /* Add this line */
+}
+
+
 
 .inventory-container {
   display: flex;
@@ -53,6 +68,7 @@ h1, h2, h3, h4, h5, h6{
   width: 40px; /* Adjusted image width */
   height: 40px; /* Adjusted image height */
   object-fit: contain; /* Maintain aspect ratio of the image */
+  margin-top: 15px;
 }
 
 .item-name {
@@ -83,12 +99,14 @@ h1, h2, h3, h4, h5, h6{
   background-color: #777777;
   color: #ffffff;
   cursor: pointer;
+  display:none;
 
 }
 
 .tab.active {
   background-color: #ffffff;
   color: #363636;
+
 }
 
 .inventory-items {

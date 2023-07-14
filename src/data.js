@@ -16,7 +16,7 @@ export let player = {
 
 	strMulti: 1,
 
-	inventory: [ Item.RustyShield, Item.RustySword ]
+	inventory: [ Item.RustyShield, Item.RustySword, Item.BoxingGloves ]
 
 }
 
