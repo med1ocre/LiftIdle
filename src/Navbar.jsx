@@ -54,6 +54,8 @@ const Navbar = ({ handleClick, activeContent }) => {
         <div style={{ width: '8rem' }}>
           <p></p>
         </div>
+
+
       </div>
     </nav>
   );

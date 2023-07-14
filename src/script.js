@@ -17,6 +17,7 @@ $(document).ready(function(){
 });
 
 
+
 export function updateSkillUI(){
 
   const homeContentDisplay = document.getElementById("homecontent");

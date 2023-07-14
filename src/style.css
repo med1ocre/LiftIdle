@@ -1,9 +1,131 @@
-body{
-
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
   background: #292d34 !important;
   overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+
+  font-weight: 600 !important;
 
 }
+
+.hcenter{
+
+  width: 100%;
+  align-items: center;
+
+}
+
+.inventory-wrapper {
+  padding: 10px;
+}
+
+.inventory-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: #212529;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  padding:10px;
+}
+
+
+.inventory-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Align content vertically and horizontally */
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  background-color: #292929; /* Adjusted gray background color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 4px; /* Adjusted padding */
+  border: 1px solid #363636; /* Light gray border */
+
+}
+
+.inventory-tile img {
+  width: 40px; /* Adjusted image width */
+  height: 40px; /* Adjusted image height */
+  object-fit: contain; /* Maintain aspect ratio of the image */
+}
+
+.item-name {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: 600 !important;
+
+}
+
+.tabs-wrapper {
+  width: 100%; /* Adjust the width as needed */
+  overflow-x: auto;
+  margin-bottom: 10px;
+
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent tabs from wrapping to the next line */
+}
+
+
+.tab {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #777777;
+  color: #ffffff;
+  cursor: pointer;
+
+}
+
+.tab.active {
+  background-color: #ffffff;
+  color: #363636;
+}
+
+.inventory-items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+
+.item-tooltip {
+  display: flex;
+  align-items: center;
+}
+
+.item-left {
+  margin-right: 10px;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+.pointerenabled{
+
+
+  cursor:pointer;
+
+}
+
+
 
 .gameLogo{
 
@@ -26,7 +148,7 @@ body{
 .navbar{
 
     padding:0.5rem;
-
+    font-weight: 400 !important;
 }
 
 .card {
@@ -132,4 +254,11 @@ body{
   color: #90EE90;
 
 }
+
+.whitetext{
+
+  color: white;
+
+}
+
 

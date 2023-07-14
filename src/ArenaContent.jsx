@@ -15,13 +15,8 @@ const ArenaContent = () => {
             <p className="card-text">Level 0</p>
 
             <p className="card-text"><span className="lightredtext">{player.strength}</span> | <span className="lightbluetext">{player.intelligence}</span> | <span className="lightgreentext">{player.agility}</span></p>
-            <p className="card-text">Income: ${gym.one.income}/s<br></br>{gym.one.strMulti * 100}% Multi to Strength Training</p>
-            {gym.one.bought ? null : (
-              <>
-                <hr />
-                <a href="#" id="purchaseGymOneBtn" className="btn btn-primary" onClick={() => purchaseGym(1)}>Purchase</a>
-              </>
-            )}
+
+
           </div>
         </div>
       </div>

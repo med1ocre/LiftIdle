@@ -2,6 +2,7 @@ import { updateSkillUI } from './script.js';
 
 import { Item } from './Item.js';
 
+
 export let player = {
 
 	cash: 0,
@@ -15,7 +16,7 @@ export let player = {
 
 	strMulti: 1,
 
-	inventory: [ Item.RustySword ]
+	inventory: [ Item.RustyShield, Item.RustySword ]
 
 }
 
@@ -54,35 +55,27 @@ export let gym = {
 }
 
 
-export function saveGame(){
-
-	let gameSave = {
-
-		player: player,
-		skill: skill,
-		gym: gym
-
-	};
-	localStorage.setItem("gameSave", JSON.stringify(gameSave));
-	console.log("Game saved");
+export function saveGame() {
+  let gameSave = {
+    player: player,
+    skill: skill,
+    gym: gym,
+  };
+  localStorage.setItem("gameSave", JSON.stringify(gameSave));
+  console.log("Game saved");
 }
 
+export function loadGame() {
+  let savedGame = JSON.parse(localStorage.getItem("gameSave"));
+  if (typeof savedGame.player !== "undefined") player = savedGame.player;
+  if (typeof savedGame.skill !== "undefined") skill = savedGame.skill;
+  if (typeof savedGame.gym !== "undefined") gym = savedGame.gym;	
 
+  updateSkillUI();
 
-export function loadGame(){
-
-	let savedGame = JSON.parse(localStorage.getItem("gameSave"));
-	if(typeof savedGame.player !== "undefined") player = savedGame.player;
-	if(typeof savedGame.skill !== "undefined") skill = savedGame.skill;
-	if(typeof savedGame.gym !== "undefined") gym = savedGame.gym;
-
-	updateSkillUI();
-
-	console.log("Game loaded");
+  console.log("Game loaded");
 }
 
-
-
-setInterval(function(){saveGame();},10000);
-
-
+setInterval(function () {
+  saveGame();
+}, 10000);
